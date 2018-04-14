@@ -1,4 +1,10 @@
-import { makeExecutableSchema } from 'graphql-tools'
+import { makeExecutableSchema, 
+  makeRemoteExecutableSchema, mergeSchemas, introspectSchema 
+} from 'graphql-tools'
+
+import { HttpLink } from 'apollo-link-http'
+import fetch from 'node-fetch'
+
 import * as _ from 'lodash'
 
 import getProjection from 'backend-utilities/getProjection'
@@ -9,6 +15,7 @@ import queryResolvers from './queryResolvers'
 import mutationResolvers from './mutationResolvers' 
 
 import { Namespace } from '../model/namespace'
+import { GraphQLSchema } from 'graphql';
 
 function buildSearchParams(params) {
   let searchParams:any = {}
@@ -70,14 +77,15 @@ const resolvers = {
   Namespace: {
   },
 
-  Viewer: {
-  },
-
   Query: queryResolvers,
   Mutation: mutationResolvers
 }
 
-export const Schema = makeExecutableSchema({
+const namespaceSchema = makeExecutableSchema({
   typeDefs,
   resolvers,
 })
+
+export const getSchema = async () => {
+  return namespaceSchema
+}

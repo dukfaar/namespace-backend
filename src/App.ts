@@ -1,7 +1,7 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 
-import { Schema } from './graphql/schema'
+import { getSchema } from './graphql/schema'
 import * as graphqlHTTP from 'express-graphql'
 
 import { init as initDB } from './db'
@@ -30,20 +30,22 @@ export class App {
     initDB()
   }
 
-  start() {
-    this.loadRoutes()
+  async start() {
+    await this.loadRoutes()
 
     this.listen()
   }
 
-  loadRoutes() {
+  async loadRoutes() {
+    const schema = await getSchema()
+
     this.expressApp.use('/', (req, res, next) => {
       //TODO: add authentication middleware here
 
 			next()
 		},
 			graphqlHTTP(req => ({
-				schema: Schema,
+				schema: schema,
 				graphiql: true //Set to false if you don't want graphiql enabled,
 			}))
 		)
