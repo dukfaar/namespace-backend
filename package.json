@@ -22,18 +22,18 @@
   "homepage": "https://github.com/dukfaar/namespace-backend#readme",
   "dependencies": {
     "@types/node": "^9.4.2",
-    "mongoose": "^5.0.3",
-    "lodash": "latest",
-    "graphql": "^0.13.0",
-    "graphql-tools": "^2.20.2",
-    "express": "latest",
-    "express-graphql": "latest",
+    "apollo-link": "latest",
+    "backend-utilities": "github:dukfaar/backend-utilities",
     "bluebird": "latest",
     "body-parser": "latest",
-    "apollo-link": "latest",
-    "typescript": "^2.7.1",
+    "express": "latest",
+    "express-graphql": "latest",
+    "graphql": "^0.13.0",
+    "graphql-tools": "^2.20.2",
+    "lodash": "latest",
+    "mongoose": "^5.0.3",
     "ts-node": "latest",
-    "backend-utilities": "github:dukfaar/backend-utilities"
+    "typescript": "^2.7.1"
   },
   "devDependencies": {
     "@types/mocha": "latest",

@@ -2,13 +2,9 @@ import { makeExecutableSchema,
   makeRemoteExecutableSchema, mergeSchemas, introspectSchema 
 } from 'graphql-tools'
 
-import { HttpLink } from 'apollo-link-http'
-import fetch from 'node-fetch'
-
 import * as _ from 'lodash'
 
-import getProjection from 'backend-utilities/getProjection'
-import getProjectionForPath from 'backend-utilities/getProjectionForPath'
+import {getProjection, getProjectionForPath} from 'backend-utilities'
 
 import typeDefs from './typeDefs'
 import queryResolvers from './queryResolvers'

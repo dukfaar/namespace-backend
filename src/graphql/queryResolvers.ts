@@ -1,6 +1,6 @@
 import { Namespace } from '../model/namespace'
 
-import getProjection from 'backend-utilities/getProjection'
+import { getProjection } from 'backend-utilities'
 
 export default {
   namespaces: (root, params, source, options) => Namespace.find().select(getProjection(options)).lean().exec(),
