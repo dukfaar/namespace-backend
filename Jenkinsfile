@@ -10,6 +10,7 @@ pipeline {
         sh 'npm install' 
         sh 'npm test' 
         sh 'npm run build' 
+	sh 'cat /root/.npm/_logs/*
       }
     }
 
