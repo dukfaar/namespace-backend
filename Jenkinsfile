@@ -5,12 +5,9 @@ pipeline {
     }
   }
   stages {
-    stage('All') { 
+    stage('Install') { 
       steps {
         sh 'npm install' 
-        sh 'npm test' 
-        sh 'npm run build' 
-	sh 'cat /root/.npm/_logs/*'
       }
     }
 
@@ -22,6 +19,9 @@ pipeline {
 
     stage('Build') { 
       steps {
+	sh 'ls node_modules'
+	sh 'ls node_modules/backend-utilities'
+	sh 'ls node_modules/backend-utilities/lib'
         sh 'npm run build' 
       }
     }      
