@@ -22,9 +22,6 @@ pipeline {
 
     stage('Build') { 
       steps {
-	sh 'ls node_modules'
-	sh 'ls node_modules/backend-utilities'
-	cat 'ls node_modules/backend-utilities/package.json'
         sh 'npm run build' 
       }
     }      
