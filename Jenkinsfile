@@ -1,4 +1,7 @@
 pipeline {
+  parameters {
+    text(defaultValue: 'https://registry.npmjs.org/', description: '', name: 'npmRegistry')
+  }
   agent {
     dockerfile {
       filename 'Dockerfile.pipeline'
@@ -7,7 +10,7 @@ pipeline {
   stages {
     stage('Install') { 
       steps {
-        sh 'npm install' 
+        sh 'npm install --registry ${npmRegistry}'
       }
     }
 
