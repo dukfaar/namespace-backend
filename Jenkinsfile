@@ -1,6 +1,6 @@
 pipeline {
   parameters {
-    text(defaultValue: 'https://registry.npmjs.org/', description: '', name: 'npmRegistry')
+    string(defaultValue: 'https://registry.npmjs.org/', description: '', name: 'npmRegistry')
   }
   agent {
     dockerfile {
