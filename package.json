@@ -23,7 +23,7 @@
   "dependencies": {
     "@types/node": "^9.4.2",
     "apollo-link": "latest",
-    "backend-utilities": "github:dukfaar/backend-utilities",
+    "backend-utilities": "latest",
     "bluebird": "latest",
     "body-parser": "latest",
     "express": "latest",

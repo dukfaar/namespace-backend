@@ -16,6 +16,7 @@ node {
         stage('Build') {
             sh 'npm run build'
         }
+
     }
     
     stage('Docker Build') {
