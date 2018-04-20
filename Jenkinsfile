@@ -1,5 +1,5 @@
 node {
-    scm checkout
+    checkout scm
     
     docker.image('node:alpine').inside {
         sh 'apk add --update git'
