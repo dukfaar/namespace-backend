@@ -10,7 +10,6 @@ ENV PORT=$PORT
 
 EXPOSE 3000
 
-RUN apk add --update git
 RUN npm set registry https://npm-registry.dukfaar.com
 
 COPY package*.json ./

@@ -2,7 +2,6 @@ node {
     checkout scm
     
     docker.image('node:alpine').inside {
-        sh 'apk add --update git'
         sh 'npm set registry https://npm-registry.dukfaar.com'
         
         stage('Install') {
